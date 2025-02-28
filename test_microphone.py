@@ -93,16 +93,14 @@ try:
         print("#" * 80)
 
         rec = KaldiRecognizer(model, args.samplerate)
-        full_text = ""  # Store full recognized text
 
         while True:
             data = q.get()
             if rec.AcceptWaveform(data):
                 result = rec.Result()
-                words = result.split('"text" : "')[1].split('"}')[0]  # Extract recognized words
-                if words.strip():
-                    full_text += " " + words  # Append to paragraph
-                    print("\r" + full_text.strip(), end="", flush=True)  # Print on same line
+                words = result.split('"text" : "')[1]
+                cleaned_words = words.split("\n")[0][:-1]
+                print(cleaned_words)
 
             if dump_fn is not None:
                 dump_fn.write(data)
