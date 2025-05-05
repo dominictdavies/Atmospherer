@@ -17,7 +17,7 @@ if __name__ == "__main__":
             time.sleep(40)
 
             print("Recording audio...")
-            record_audio(device_index, duration_seconds=20)
+            record_audio(duration_seconds=20)
 
             print("Getting audio transcription...")
             transcription = get_audio_transcription()
