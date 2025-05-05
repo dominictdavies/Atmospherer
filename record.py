@@ -12,3 +12,7 @@ def record_audio(device_index, duration_seconds=60, sample_rate=48000):
     )
     sd.wait()
     scipy.io.wavfile.write("output.wav", sample_rate, recording)
+
+
+if __name__ == "__main__":
+    print(sd.query_devices())
