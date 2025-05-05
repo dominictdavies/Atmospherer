@@ -11,8 +11,6 @@ def print_gap(text: str):
 
 
 if __name__ == "__main__":
-    device_index = 35  # Found manually for my computer
-
     try:
         while True:
             print("Waiting...")
