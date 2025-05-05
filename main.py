@@ -1,4 +1,4 @@
-from recording import record_audio
+from record import record_audio
 from transcribe import get_audio_transcription
 from summarise import summarise_text
 from generate import generate_image
